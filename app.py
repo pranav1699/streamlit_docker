@@ -3,6 +3,5 @@ import streamlit as st
 
 st.title("Kafka Connect UI")
 
-st.write('testing')
+st.write('This UI is for the kafka connect')
 
-st.write("test1")
