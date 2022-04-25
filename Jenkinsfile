@@ -2,10 +2,7 @@ node {
       def app     
       stage('Clone repository') {                   
             checkout scm    
-      }     
-      stage('remove image') {
-            bat 'docker rmi streamlitapp/test'
-      }
+      }    
       stage('Build image') {         
             app = docker.build("streamlitapp/test")    
        }     
