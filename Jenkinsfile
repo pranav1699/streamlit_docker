@@ -9,9 +9,6 @@ node {
             app = docker.build("streamlitapp/test")    
        }     
       stage('Test image') {           
-            app.inside {            
-             
-             sh 'echo "Tests passed"'        
-            }    
+            sh 'docker rn streamlitapp/test'        
         } 
 }
