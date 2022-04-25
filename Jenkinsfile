@@ -3,15 +3,6 @@ node {
       stage('Clone repository') {                   
             checkout scm    
       }    
-      stage("Remove Image"){
-            bat '''for /f %%i in ('docker images -qf "name=^streamlitapp"') do set imageId=%%i
-echo %imageId%
-If "%imageId%" == "" (
-  echo "No Container running"
-) ELSE (
-  docker image rm streamlitapp
-)''' 
-      }
       stage('Build image') {         
             app = docker.build("streamlitapp:latest")    
        }  
