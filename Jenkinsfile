@@ -9,6 +9,6 @@ node {
             app = docker.build("streamlitapp/test")    
        }     
       stage('Test image') {           
-            sh 'docker rn streamlitapp/test'        
+            sh 'docker run -p 8502:8502 streamlitapp/test'        
         } 
 }
