@@ -20,6 +20,6 @@ If "%containerId%" == "" (
      
         }
       stage('Test image') {           
-            bat 'docker run --rm -itd -p 8502:8502 --name streamlit streamlitapp:latest'        
+            bat "docker run --rm -itd -p ${STREAMLIT_PORT}:${STREAMLIT_PORT} --name streamlit streamlitapp:latest"
         } 
 }
